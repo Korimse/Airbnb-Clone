@@ -1,22 +1,15 @@
 {% extends 'base.html' %}
 {% block page_title %}
-Search
+Log In
 {% endblock page_title %}
 
 {% block search-bar %}
-
 {% endblock search-bar %}
 
 {% block content %}
-
-<h2>Search!</h2>
-    <form method="get" action="{% url "rooms:search" %}">
+    <form method="POST" action="{% url "users:login" %}">
+        {% csrf_token %}
         {{form.as_p}}
-        <button>Search</button>
+        <button>Login</button>
     </form>
-
-<h3>Results</h3>
-{% for room in rooms %}
-<h3>{{room.name}}</h3>
-{% endfor %}
 {% endblock content %}

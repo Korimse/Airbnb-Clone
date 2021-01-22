@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{% block page_title %}{% endblock page_title %}| Airbnb</title>
+    <title>{% block page_title %}{% endblock page_title %} Airbnb</title>
 </head>
+
 <body>
     <header>
-    {% include "partials/nav.html" %}
-    {% block search-bar %}
+        {% include "partials/nav.html" %}
+        {% block search-bar %}
         <form method="get" action="{% url "rooms:search" %}">
-            <input name = "city" placeholder = "search by City"/>
+            <input name="city" placeholder="search by City" />
         </form>
-    {% endblock search-bar %}
+        {% endblock search-bar %}
     </header>
     {% block content %}{% endblock content %}
 
     {% include "partials/footer.html" %}
 
 </body>
+
 </html>
