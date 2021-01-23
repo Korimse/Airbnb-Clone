@@ -20,6 +20,7 @@ class UserAdmin(UserAdmin):
                     "language",
                     "currency",
                     "superhost",
+                    "login_method",
                 )
             },
         ),
@@ -38,4 +39,7 @@ class UserAdmin(UserAdmin):
         "superhost",
         "is_staff",
         "is_superuser",
+        "email_verified",
+        "email_secret",
+        "login_method",
     )
